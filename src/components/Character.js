@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const CharacterStyled = styled.div`
     color: darkslategrey;
@@ -12,6 +13,7 @@ const NameStyled = styled.h3`
 
 const Character = (props) => {
     const { data } = props
+
     return (
         <CharacterStyled>
         <div className = 'name'>
@@ -19,11 +21,9 @@ const Character = (props) => {
         </div>
         <div className = 'info'>
             <p>Birth Year: {data.birth_year}</p>
-            <p>Homeworld: {data.homeworld}</p>
             <p>Height: {data.height}</p>
             <p>Hair Color: {data.hair_color}</p>
             <p>Eye Color: {data.eye_color}</p>
-            <p>Films: {data.films}</p>
         </div>
         </CharacterStyled>
     )

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Character from './components/Character';
 
 const App = () => {
-  const [ swData, setSwData ] = useState[]
+  const [ swData, setSwData ] = useState([])
   useEffect(() => {
     axios.get('https://swapi.dev/api/people/')
     .then(result => {
@@ -20,6 +20,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      {swData.map(item => {
+        return <Character data={item} />
+      })}
     </div>
   );
 }
